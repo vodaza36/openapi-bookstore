@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  description: My demo bookstore
+  title: Bookstore
+  version: 0.0.1
+servers:
+- description: Local development environment
+  url: http://localhost:8080/v1
+- description: Production environment
+  url: https://bookstore.hochbichler.at/v1
+paths:
+  /books:
+    get:
+      description: Retrieve all books from the store
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+          description: if OK, returns a list of books
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeneralError'
+          description: Unexpected error
+      summary: Return all books
+      x-accepts: application/json
+components:
+  schemas:
+    Book:
+      example:
+        name: name
+        id: 0
+      properties:
+        id:
+          format: int32
+          type: integer
+        name:
+          type: string
+      required:
+      - id
+      - name
+    GeneralError:
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+      required:
+      - code
+      - description
