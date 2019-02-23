@@ -1,6 +1,10 @@
 # OpenAPI Bookstore
 In diesem Beispielprojekt wird anhand einer OpenAPI Spezifikation (OAS3) und der OpenAPI Generator CLI ein Mock Server generiert.
 
+## Branch '1-open-api-generator'
+Dieser Branch zeigt, wie man mit der OpenAPI CLI den Server-Teil generiert und wie daraus ein vollständiges Maven-Spring-Boot Projekt erzeugt wird.
+
+
 ## Vorgehensweise
 1. Mit dem Swagger-Editor wurde eine API Spezifikation (v3) erzeugt und im Anschluss in ein api.yaml Datei exportiert.
 2. Die Datei `config.json` enthält die Konfiguration für den OpenAPI Generator
