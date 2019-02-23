@@ -1,0 +1,15 @@
+org/openapitools/api/BooksApi.class
+org/openapitools/OpenAPI2SpringBoot$ExitException.class
+org/openapitools/model/Book.class
+org/openapitools/api/ApiUtil.class
+org/openapitools/configuration/HomeController.class
+org/openapitools/api/BooksApiDelegate.class
+org/openapitools/RFC3339DateFormat.class
+org/openapitools/api/service/BooksApiService.class
+org/openapitools/model/GeneralError.class
+org/openapitools/OpenAPI2SpringBoot.class
+org/openapitools/api/BooksApiController$1.class
+org/openapitools/api/BooksApiController.class
+org/openapitools/api/BooksApi$1.class
+org/openapitools/model/NewBook.class
+org/openapitools/OpenAPI2SpringBoot$1.class
