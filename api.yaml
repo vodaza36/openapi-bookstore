@@ -13,6 +13,7 @@ servers:
 paths:
   /books:
     get:
+      operationId: findAllBooks
       summary: Return all books
       description: Retrieve all books from the store
       responses:
@@ -21,7 +22,9 @@ paths:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/Book'
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Book'
         default:
           description: Unexpected error
           content:

@@ -12,12 +12,15 @@ paths:
   /books:
     get:
       description: Retrieve all books from the store
+      operationId: findAllBooks
       responses:
         200:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Book'
+                items:
+                  $ref: '#/components/schemas/Book'
+                type: array
           description: if OK, returns a list of books
         default:
           content:
