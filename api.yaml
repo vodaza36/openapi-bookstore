@@ -4,12 +4,12 @@ info:
   description: My demo bookstore
   version: 0.0.1
 
-servers: 
+servers:
   - url: http://localhost:8080/v1
     description: Local development environment
   - url: https://bookstore.hochbichler.at/v1
     description: Production environment
-    
+
 paths:
   /books:
     get:
@@ -18,21 +18,51 @@ paths:
       description: Retrieve all books from the store
       responses:
         '200':
-            description: if OK, returns a list of books
-            content:
-              application/json:
-                schema:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/Book'
+          description: if OK, returns a list of books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
         default:
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GeneralError'
+    post:
+      operationId: addNewBook
+      summary: Add a new book
+      description: Adds a new book to the store
+      requestBody:
+        description: Pet to add to the store
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewBook'
+      responses:
+        '200':
+          description: book response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeneralError'
 components:
   schemas:
+    NewBook:
+      properties:
+        name:
+          type: string
+      required:
+        - name
     Book:
       properties:
         id:
