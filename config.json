@@ -1,7 +1,0 @@
-{
-    "delegatePattern": true,
-    "useBeanValidation": true,
-    "performBeanValidation": true,
-    "apiFirst": true,
-    "interfaceOnly": true
-}
